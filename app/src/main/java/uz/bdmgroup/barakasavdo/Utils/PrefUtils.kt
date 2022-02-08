@@ -53,7 +53,7 @@ object PrefUtils {
         return Hawk.get(KEY_CART, arrayListOf<CartModel>())
     }
 
-
+//savatga qo'shilgan mahsulot sonini qaytaradi
     fun getCartCount(item: ProductModel): Int {
         val items = Hawk.get<ArrayList<CartModel>>(KEY_CART, arrayListOf<CartModel>())
         return items.filter { it.product_id == item.id }.firstOrNull()?.count ?: 0
