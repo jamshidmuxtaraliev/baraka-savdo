@@ -88,6 +88,7 @@ class MainActivity : AppCompatActivity() {
         navigationmenu.getHeaderView(0).closemenudriver.setOnClickListener {
             draverLayout.closeDrawers()
         }
+        //fghjk
 
 
 
