@@ -78,6 +78,7 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+        //comment qoshildi
 
         //dravermenu ni ochish
         imgMenu.setOnClickListener {
