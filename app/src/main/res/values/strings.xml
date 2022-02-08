@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Baraka Savdo</string>
+    <string name="Telefon_Haqida">iPhone 13 Pro va iPhone 13 Pro Max Apple A15 Bionic protsessori va Telegraf va telefon ixtiro qilinishidan oldin xabarlarni uzoq masofalarga uzatishda hushtak chalish, gong, tutun signallari yoki baraban chalish kabi eng ibtidoiy usullardan foydalanilgan. Masalan, miltiqdan oq otilishi taxminan on kilometr masofada eshitilishi mumkin, eshitish qobiliyatiga yaqin atrofdagi begona shovqinlarning mavjudligi katta tasir qiladi signal begona oqlar tomonidan buzilgan bolishi mumkin. Bularning hammasi</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="favorite_products">Favorite Products</string>
+    <string name="baraka_shopping">Baraka SHopping</string>
+    <string name="confirm_address">confirm Address</string>
+    <string name="make_order">Make Order</string>
+    <string name="delivery_address">Delivery address</string>
+    <string name="comment">Comment</string>
+    <string name="make_ordered">Make ordered</string>/>
+</resources>

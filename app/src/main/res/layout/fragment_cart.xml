@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fff"
+    tools:context=".screen.cart.CartFragment">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
+
+      <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+          android:id="@+id/swipeCart"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1">
+          <androidx.recyclerview.widget.RecyclerView
+              android:id="@+id/recylerCart"
+              android:layout_width="match_parent"
+              android:layout_height="0dp" />
+      </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+      <com.google.android.material.button.MaterialButton
+          android:id="@+id/btnOrder"
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:text="@string/make_order"
+          android:layout_marginHorizontal="30dp"
+          app:cornerRadius="17dp"
+          android:layout_gravity="center"
+          android:layout_marginVertical="8dp"/>
+  </LinearLayout>
+
+</FrameLayout>

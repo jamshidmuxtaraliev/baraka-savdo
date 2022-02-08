@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "992003058105",
+    "project_id": "baraka-savdo-6bee3",
+    "storage_bucket": "baraka-savdo-6bee3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:992003058105:android:efa36c60bc0fc5ef512e68",
+        "android_client_info": {
+          "package_name": "uz.bdmgroup.barakasavdo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "992003058105-de2evjiufuqvh8vomaoo92skfhph5cog.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTMmzS2Y7NcKYbQB6Gj482lJ7dVcNzVlc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "992003058105-de2evjiufuqvh8vomaoo92skfhph5cog.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/profiledriver"
+        android:icon="@drawable/ic_profile_user"
+        android:title="Profile change"/>
+    <item
+        android:id="@+id/languagedriver"
+        android:icon="@drawable/ic_language"
+        android:title="Language "/>
+    <item
+        android:id="@+id/settingdriver"
+        android:title="Settings"
+        android:icon="@drawable/ic_settings"/>
+    <item
+        android:id="@+id/callme"
+        android:title="Contact Us"
+        android:icon="@drawable/common_full_open_on_phone"/>
+    <item
+        android:id="@+id/aboutdriver"
+        android:title="About as Me"
+        android:icon="@drawable/ic_info"/>
+<group>
+     <item
+         android:id="@+id/logout"
+         android:title="Log Out"
+         android:icon="@drawable/ic_logout"/>
+
+     <item
+         android:id="@+id/shareprogramm"
+         android:title="Share to"
+         android:icon="@drawable/ic_share"/>
+</group>
+</menu>

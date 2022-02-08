@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F9F8F9"
+    tools:context=".screen.favorite.FavoriteFragment">
+
+  <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+      android:id="@+id/Swipe"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical"
+          android:gravity="center">
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_weight="1"
+              android:layout_height="0dp"
+              android:text="@string/favorite_products"
+              android:textSize="22dp"
+              android:textStyle="bold"
+              android:textColor="@color/colorPrimary"
+              android:layout_gravity="center"
+              android:gravity="center"
+              android:fontFamily="serif"/>
+
+          <View
+              android:layout_width="match_parent"
+              android:layout_height="1px"
+              android:background="@color/colorAccept"/>
+
+          <androidx.core.widget.NestedScrollView
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              android:layout_weight="14">
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+                  <androidx.recyclerview.widget.RecyclerView
+                      android:id="@+id/recyclerfavoriteproduct"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:layout_marginTop="5dp"/>
+              </LinearLayout>
+          </androidx.core.widget.NestedScrollView>
+      </LinearLayout>
+  </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</FrameLayout>
