@@ -84,6 +84,7 @@ class MainActivity : AppCompatActivity() {
         imgMenu.setOnClickListener {
             draverLayout.openDrawer(GravityCompat.START)
         }
+        //ftycrycfr
 
         navigationmenu.getHeaderView(0).closemenudriver.setOnClickListener {
             draverLayout.closeDrawers()
