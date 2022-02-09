@@ -8,6 +8,7 @@ import java.util.*
 object PrefUtils {
     const val KEY_FAVORITE = "key_favorite"
     const val KEY_CART = "key_Cart"
+    const val KEY_TOKEN= "pref_token"
     const val KEY_FCMTOKEN = "key_Fcm_token"
 
     fun setFavorite(item: ProductModel) {
@@ -67,5 +68,13 @@ object PrefUtils {
     //firebasdagi tokenni qaytarish
     fun getFCMToken():String{
         return Hawk.get(KEY_FCMTOKEN, "")
+    }
+
+    fun setToken(value: String){
+        Hawk.put(KEY_TOKEN, value)
+    }
+
+    fun getToken(): String{
+        return Hawk.get(KEY_TOKEN, "")
     }
 }
