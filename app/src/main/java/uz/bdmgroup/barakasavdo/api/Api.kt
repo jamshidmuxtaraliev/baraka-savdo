@@ -5,6 +5,8 @@ import retrofit2.Call
 import retrofit2.http.*
 import uz.bdmgroup.barakasavdo.model.*
 import uz.bdmgroup.barakasavdo.model.Request.GetProductByIdByRequest
+import uz.bdmgroup.barakasavdo.model.Request.MakeOrderRequest
+import uz.bdmgroup.barakasavdo.model.Request.RegisterRequest
 
 interface Api{
     @GET("get_offers")

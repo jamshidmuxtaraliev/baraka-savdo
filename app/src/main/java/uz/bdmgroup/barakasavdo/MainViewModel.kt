@@ -8,9 +8,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import uz.bdmgroup.barakasavdo.api.repository.ShopRepository
 import uz.bdmgroup.barakasavdo.databaseDAO.AppDataBase
-import uz.bdmgroup.barakasavdo.model.CategoryModel
-import uz.bdmgroup.barakasavdo.model.OfferModel
-import uz.bdmgroup.barakasavdo.model.ProductModel
+import uz.bdmgroup.barakasavdo.model.*
 
 class MainViewModel : ViewModel() {
 
@@ -21,6 +19,29 @@ class MainViewModel : ViewModel() {
     val categoriessData = MutableLiveData<List<CategoryModel>>()
     val topProductData = MutableLiveData<List<ProductModel>>()
     val progress = MutableLiveData<Boolean>()
+
+    val checkPhoneData = MutableLiveData<CheckPhoneResponse>()
+    val registrationData = MutableLiveData<Boolean>()
+    val confirmData = MutableLiveData<LoginResponse>()
+    val loginData = MutableLiveData<LoginResponse>()
+    val makeOrderData = MutableLiveData<Boolean>()
+
+    fun checkPhone(phone: String){
+        repository.checkPhone(phone, error, progress, checkPhoneData)
+    }
+
+    fun registrationData(fullname: String, phone: String, password: String){
+        repository.registration(fullname, phone, password, error, progress, registrationData)
+    }
+
+    fun login(phone: String, password: String){
+        repository.login(phone, password, error, progress, loginData)
+    }
+
+    fun confirmUser(phone: String, code: String){
+        repository.confirmUser(phone, code, error, progress, confirmData)
+    }
+
 
     fun getOffers() {
         repository.getOffers(error, progress, offersdata)
