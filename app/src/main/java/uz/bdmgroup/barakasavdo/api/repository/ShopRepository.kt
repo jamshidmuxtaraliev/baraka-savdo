@@ -9,6 +9,7 @@ import uz.bdmgroup.barakasavdo.Utils.PrefUtils
 import uz.bdmgroup.barakasavdo.api.ApiServices
 import uz.bdmgroup.barakasavdo.model.*
 import uz.bdmgroup.barakasavdo.model.Request.GetProductByIdByRequest
+import uz.bdmgroup.barakasavdo.model.Request.MakeOrderRequest
 import uz.bdmgroup.barakasavdo.model.Request.RegisterRequest
 
 class ShopRepository() {
@@ -114,6 +115,35 @@ class ShopRepository() {
                         if (t.success){
                             success.value = t.data
                         }else{
+                            error.value = t.message
+                        }
+                    }
+
+                    override fun onError(e: Throwable) {
+                        progress.value = false
+                        error.value = e.localizedMessage
+                    }
+                })
+        )
+    }
+
+
+    fun makeOrder(products: List<CartModel>, lat: Double, lon: Double, comment: String, error: MutableLiveData<String>, progress: MutableLiveData<Boolean>, success: MutableLiveData<Boolean>) {
+        progress.value = true
+        compositeDisposable.add(
+            ApiServices.ApiCreator().makeOrder(MakeOrderRequest(products, "delivery", "", lat, lon, comment))
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(object : DisposableObserver<BaseResponse<Any>>() {
+                    override fun onComplete() {
+
+                    }
+
+                    override fun onNext(t: BaseResponse<Any>) {
+                        progress.value = false
+                        if (t.success) {
+                            success.value = true
+                        } else {
                             error.value = t.message
                         }
                     }

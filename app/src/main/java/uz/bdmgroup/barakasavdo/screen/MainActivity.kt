@@ -15,11 +15,13 @@ import kotlinx.android.synthetic.main.navigation_header_layout.view.*
 import uz.bdmgroup.barakasavdo.MainViewModel
 import uz.bdmgroup.barakasavdo.R
 import uz.bdmgroup.barakasavdo.Utils.LocaleManager
+import uz.bdmgroup.barakasavdo.Utils.PrefUtils
 import uz.bdmgroup.barakasavdo.screen.cart.CartFragment
 import uz.bdmgroup.barakasavdo.screen.changelanguage.ChangeLanguageFragment
 import uz.bdmgroup.barakasavdo.screen.favorite.FavoriteFragment
 import uz.bdmgroup.barakasavdo.screen.home.HomeFragment
 import uz.bdmgroup.barakasavdo.screen.profile.ProfileFragment
+import uz.bdmgroup.barakasavdo.screen.signin.LoginActivity
 
 class MainActivity : AppCompatActivity() {
     val homeFragment = HomeFragment.newInstance()
@@ -121,9 +123,14 @@ class MainActivity : AppCompatActivity() {
                     .commit()
                 activeFragment = cartFragment
             } else if (it.itemId == R.id.action_profile) {
-                supportFragmentManager.beginTransaction().hide(activeFragment).show(profileFragment)
-                    .commit()
-                activeFragment = profileFragment
+                if (PrefUtils.getToken().isNullOrEmpty()){
+                    startActivity(Intent(this, LoginActivity::class.java))
+                    return@setOnNavigationItemSelectedListener false
+                }
+                else{
+                    supportFragmentManager.beginTransaction().hide(activeFragment).show(profileFragment).commit()
+                    activeFragment = profileFragment
+                }
             }
 
             return@setOnNavigationItemSelectedListener true

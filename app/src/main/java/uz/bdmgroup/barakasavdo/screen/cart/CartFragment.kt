@@ -13,9 +13,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_cart.*
 import uz.bdmgroup.barakasavdo.MainViewModel
 import uz.bdmgroup.barakasavdo.R
+import uz.bdmgroup.barakasavdo.Utils.Constants
 import uz.bdmgroup.barakasavdo.Utils.PrefUtils
 import uz.bdmgroup.barakasavdo.model.ProductModel
 import uz.bdmgroup.barakasavdo.screen.makeorder.OrderActivity
+import uz.bdmgroup.barakasavdo.screen.signin.LoginActivity
 import uz.bdmgroup.barakasavdo.view.CartProductAdapter
 import java.io.Serializable
 
@@ -54,9 +56,14 @@ class CartFragment : Fragment() {
         }
 
         btnOrder.setOnClickListener {
-            val intent=Intent(requireActivity(), OrderActivity::class.java)
-            intent.putExtra("go_product", (viewModel.topProductData.value?: emptyList<ProductModel>())as Serializable)
-            startActivity(intent)
+       if (PrefUtils.getToken().isNullOrEmpty()){
+           startActivity(Intent(requireActivity(), LoginActivity::class.java))
+       }
+       else{
+           val intent=Intent(requireActivity(), OrderActivity::class.java)
+           intent.putExtra(Constants.EXTRA_DATA, (viewModel.topProductData.value?: emptyList<ProductModel>())as Serializable)
+           startActivity(intent)
+       }
         }
 
         loadData()

@@ -6,8 +6,8 @@ data class MakeOrderRequest(
     val products:List<CartModel>,
     val order_type:String,
     val adress:String,
-    val lat:String,
-    val lon:String,
+    val lat:Double,
+    val lon:Double,
     val comment:String
 
 )

@@ -42,6 +42,10 @@ class MainViewModel : ViewModel() {
         repository.confirmUser(phone, code, error, progress, confirmData)
     }
 
+    fun makeOrder(products: List<CartModel>, lat: Double, lon: Double, comment: String){
+        repository.makeOrder(products, lat, lon, comment, error, progress, makeOrderData)
+    }
+
 
     fun getOffers() {
         repository.getOffers(error, progress, offersdata)
@@ -96,4 +100,5 @@ class MainViewModel : ViewModel() {
             }
         }
     }
+
 }
